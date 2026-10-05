@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>الوحدة الثانية · Unit 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070B1A;--p:#111A3B;--p2:#18234C;--ln:#26346B;--ink:#EEF2FF;--dim:#9DAAD6;--a:#6C7CFF;--b:#22D3EE;--ok:#34D399;--bad:#FB7185;--w:#FBBF24;--g:linear-gradient(120deg,#6C7CFF,#22D3EE);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#F3F5FF;--p:#fff;--p2:#EEF1FF;--ln:#D6DDF5;--ink:#0E1535;--dim:#55618F}}
+:root[data-theme=light]{--bg:#F3F5FF;--p:#fff;--p2:#EEF1FF;--ln:#D6DDF5;--ink:#0E1535;--dim:#55618F}
+:root[data-theme=dark]{--bg:#070B1A}
+*{box-sizing:border-box}html{height:100%;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Cairo,Inter,system-ui,sans-serif;min-height:100%}
+html[lang=en] body{font-family:Inter,Cairo,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px}
+#gate{position:fixed;inset:0;z-index:99;display:grid;place-items:center;padding:20px;background:radial-gradient(600px 400px at 20% 10%,rgba(108,124,255,.35),transparent 60%),radial-gradient(600px 400px at 90% 95%,rgba(34,211,238,.25),transparent 60%),var(--bg)}
+.gc{width:100%;max-width:380px;background:var(--p);border:1px solid var(--ln);border-radius:26px;padding:30px;text-align:center}
+.av{width:70px;height:70px;margin:0 auto 10px;border-radius:22px;background:var(--g);display:grid;place-items:center;font-size:30px;transform:rotate(-6deg)}
+.gc h2{margin:0;font-size:26px}.gc p{color:var(--dim);margin:4px 0 16px;font-size:14px}
+input{width:100%;padding:13px;border-radius:12px;border:1.5px solid var(--ln);background:var(--p2);color:var(--ink);font-size:20px;letter-spacing:6px;text-align:center;outline:0}
+.btn{border:0;border-radius:12px;padding:11px 20px;font:700 15px inherit;font-family:inherit;cursor:pointer;color:#fff;background:var(--g);transition:.2s}
+.btn:hover{transform:translateY(-2px)}.gc .btn{width:100%;margin-top:12px}
+.sm{background:var(--p2);color:var(--ink);border:1px solid var(--ln);padding:7px 14px;font-size:13px}
+#app{display:none}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--ln);padding-top:env(safe-area-inset-top,0px)}
+.hb{display:flex;align-items:center;gap:10px;padding:10px 0}.hb b{flex:1;font-size:15px}
+.xp{padding:6px 12px;border-radius:99px;background:var(--p);border:1px solid var(--ln);font-weight:700;font-size:13px;color:var(--w)}
+#bar{height:3px;width:0;background:var(--g);transition:.4s}
+.hero{padding:34px 0 10px}
+.pill{display:inline-block;padding:5px 14px;border-radius:99px;border:1px solid var(--ln);background:var(--p);font-size:12px;color:var(--b);font-weight:700}
+.hero h1{font-size:clamp(28px,6vw,46px);margin:12px 0 4px;line-height:1.3}
+.grad{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--dim);margin:0}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:16px 0}
+.tab{flex:none;padding:10px 16px;border-radius:12px;border:1px solid var(--ln);background:var(--p);color:var(--dim);font:700 14px inherit;font-family:inherit;cursor:pointer}
+.tab.on{background:var(--g);color:#fff;border-color:transparent}
+h2.lt{font-size:clamp(22px,4vw,30px);margin:6px 0 14px}
+h3{margin:22px 0 10px;font-size:18px}
+.card{background:var(--p);border:1px solid var(--ln);border-radius:18px;padding:8px 18px}
+.pt{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--ln)}.pt:last-child{border:0}
+.pt i{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(108,124,255,.18);color:var(--a);display:grid;place-items:center;font:700 12px Inter,sans-serif;font-style:normal;margin-top:3px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.tm{background:var(--p);border:1px solid var(--ln);border-radius:18px;padding:16px;transition:.2s}
+.tm.done{border-color:var(--ok)}
+.tm .h{display:flex;gap:10px;align-items:center}.tm .ic{font-size:28px}.tm b{font-size:16px}
+.tm p{margin:6px 0 10px;color:var(--dim);font-size:14px;line-height:1.6}
+.gm{margin-top:10px;padding:12px;border-radius:14px;background:var(--p2);display:none}.gm.open{display:block;animation:f .3s}
+@keyframes f{from{opacity:0;transform:translateY(6px)}}
+.gm .q{font-weight:700;margin-bottom:8px}
+.os{display:grid;gap:7px}
+.o{padding:10px 12px;border-radius:11px;border:1.5px solid var(--ln);background:var(--p);color:var(--ink);font:600 14px inherit;font-family:inherit;cursor:pointer;text-align:start}
+.o.ok{border-color:var(--ok);background:rgba(52,211,153,.18)}.o.bad{border-color:var(--bad);background:rgba(251,113,133,.16);animation:s .3s}
+@keyframes s{25%{transform:translateX(5px)}75%{transform:translateX(-5px)}}
+.fb{min-height:22px;margin-top:8px;font-weight:700;font-size:14px}
+.tip{margin-top:18px;padding:14px 16px;border-radius:14px;border:1.5px dashed var(--w);background:rgba(251,191,36,.08)}
+.nx{margin:24px 0 50px;text-align:end}
+.mq{background:var(--p);border:1px solid var(--ln);border-radius:18px;padding:16px;margin-bottom:12px}
+.mq .q{font-weight:700;margin-bottom:10px}
+.res{text-align:center;padding:24px;border-radius:20px;background:var(--g);color:#fff;font-size:22px;font-weight:800;margin-top:14px}
+footer{padding:20px 0 40px;text-align:center;color:var(--dim);font-size:13px}footer b{color:var(--ink);font-size:16px}
+.ex{margin-top:10px;padding:10px 12px;border-radius:12px;background:rgba(34,211,238,.1);border-inline-start:4px solid var(--b);font-size:14px;font-weight:600;line-height:1.8}
+.ex.no{background:rgba(251,113,133,.1);border-color:var(--bad)}
+.tm.miss{border-color:var(--w)}
+.lv{font-size:12px;color:var(--dim)}.stk{color:var(--bad);font-weight:800}
+.cs{background:var(--p);border:1px solid var(--ln);border-radius:20px;padding:18px;margin-top:12px}
+.cs .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--dim);margin-bottom:8px}
+.pb{height:6px;border-radius:9px;background:var(--p2);overflow:hidden;margin-bottom:14px}.pb i{display:block;height:100%;background:var(--g);transition:.3s}
+.sc{font-size:17px;font-weight:700;margin-bottom:12px;line-height:1.8}
+.o:disabled{cursor:default}
+</style>
+</head>
+<body>
+<div id="gate"><div class="gc"><div class="av">🔐</div><h2 id="gt">م/ أحمد تامر</h2><p id="gp">أدخل كلمة السر</p><input id="gi" type="password" inputmode="numeric" autocomplete="off"><button class="btn" id="gbn" onclick="unlock()">دخول</button><div id="ge" style="min-height:22px;margin-top:8px;color:var(--bad);font-weight:700"></div></div></div>
+<div id="app">
+<header><div class="wrap hb"><b id="brand"></b><span class="xp" id="xp"></span><button class="btn sm" id="lg" onclick="setLang()"></button></div><div id="bar"></div></header>
+<main class="wrap">
+<div class="hero"><span class="pill" id="hp"></span><h1 id="ht"></h1><p id="hs"></p></div>
+<div class="tabs" id="tabs"></div>
+<div id="main"></div>
+</main>
+<footer class="wrap"><b>م/ أحمد تامر</b><div id="ft"></div><div dir="ltr">📞 01026309600</div></footer>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+let lang='ar',tab=0,xp=0,done={},miss={},qa={};try{const P=JSON.parse(localStorage.getItem('u2p')||'{}');xp=P.xp||0;done=P.done||{};miss=P.miss||{}}catch(e){}
+try{lang=localStorage.getItem('u2l')||'ar'}catch(e){}
+const S={ar:{pass:'أدخل كلمة السر',go:'دخول',bad:'كلمة السر غلط',hp:'الصف الأول الثانوي · البرمجة والذكاء الاصطناعي',ht:'الوحدة الثانية: الخصوصية وحقوق الملكية',hs:'نقاط بسيطة + لعبة صغيرة لكل مصطلح',key:'📌 النقاط الرئيسية',terms:'🎯 المصطلحات — العب وافهم',play:'🎮 العب',next:'الدرس التالي ←',quiz:'🏆 اختبر نفسك',ok:'✅ برافو! +10',no:'❌ جرّب تاني',ft:'الوحدة الثانية كاملة',lang:'English',score:'نتيجتك',of:'من',brand:'الوحدة الثانية',chal:'🧩 تحدي الحالات'},
+en:{pass:'Enter password',go:'Enter',bad:'Wrong password',hp:'Grade 10 · Programming & AI',ht:'Unit 2: Privacy & Intellectual Property',hs:'Simple points + a mini-game for every term',key:'📌 Key points',terms:'🎯 Terms — play & learn',play:'🎮 Play',next:'Next lesson →',quiz:'🏆 Test yourself',ok:'✅ Great! +10',no:'❌ Try again',ft:'Complete Unit 2',lang:'العربية',score:'Your score',of:'of',brand:'Unit 2',chal:'🧩 Case challenge'}};
+const t=x=>x[lang==='ar'?0:1],s=k=>S[lang][k];
+const YN=[['أيوه','Yes'],['لا','No']],AV=[['مسموح','Allowed'],['انتهاك','Violation']],CC=[['BY — اذكر المؤلف','BY — credit the author'],['NC — غير تجاري','NC — non-commercial'],['ND — بدون تعديل','ND — no changes'],['SA — نفس الشروط','SA — same terms']];
+const LS=[
+{ic:'🔐',n:['الدرس 2-1: البيانات والخصوصية','2-1: Data & Privacy'],
+pts:[['البيانات الشخصية = أي معلومة تدل على شخص معيّن','Personal data = any info that identifies a person'],['أمثلة: الاسم، العنوان، الموبايل، الإيميل، الصورة، الصوت، الرقم القومي','Examples: name, address, phone, email, photo, voice, national ID'],['القانون ينظّم جمع البيانات ومعالجتها وتخزينها ونقلها','The law regulates collecting, processing, storing & transferring data'],['مشاركة بياناتك مع طرف ثالث = بموافقتك الصريحة فقط','Sharing your data with a third party = only with your clear consent'],['بدون موافقة: قانون • أمن قومي • إنقاذ حياة • حكم قضائي • تنفيذ عقد','Without consent: law • national security • saving a life • court order • contract']],
+tip:['أي بيان يوصّل لشخص = شخصي. والحساس ليه حماية أكبر.','Anything that leads to a person = personal. Sensitive data gets extra protection.'],
+terms:[
+{ic:'👤',n:['بيانات شخصية','Personal data'],d:['معلومة تحدد شخص طبيعي','Info that identifies a person'],q:['رقم موبايلك ده…','Your mobile number is…'],o:[['بيان شخصي','Personal data'],['معلومة عامة','Public info']],a:0},
+{ic:'📇',n:['بيانات أساسية','Basic data'],d:['الاسم، العنوان، تاريخ الميلاد، النوع','Name, address, birth date, gender'],q:['تاريخ الميلاد نوعه…','Date of birth is…'],o:[['أساسية','Basic'],['رقم هوية','ID number'],['حساسة','Sensitive']],a:0},
+{ic:'🔢',n:['أرقام الهوية','ID numbers'],d:['جواز السفر، رخصة القيادة، الرقم القومي','Passport, license, national ID'],q:['رقم جواز السفر نوعه…','Passport number is…'],o:[['أساسية','Basic'],['رقم هوية','ID number'],['حساسة','Sensitive']],a:1},
+{ic:'🧬',n:['بيانات حساسة','Sensitive data'],d:['الصحة، الدين، السجل الجنائي، البصمة','Health, religion, criminal record, biometrics'],q:['بصمة الإصبع نوعها…','A fingerprint is…'],o:[['أساسية','Basic'],['رقم هوية','ID number'],['حساسة','Sensitive']],a:2},
+{ic:'🔏',n:['الحق في الخصوصية','Right to privacy'],d:['الدستور (مادة 57) يحمي الحياة الخاصة','Constitution (Art. 57) protects private life'],q:['المادة 57 تحمي…','Article 57 protects…'],o:[['الحياة الخاصة','Private life'],['أسعار السيارات','Car prices']],a:0},
+{ic:'📸',n:['حقوق الصورة','Image rights'],d:['لا تصوير ولا نشر صورة بدون إذن','No photo/sharing without permission'],q:['نشر صورة زميلك بدون إذنه…','Posting a classmate\'s photo without consent…'],o:AV,a:1},
+{ic:'🌟',n:['حقوق الدعاية','Publicity rights'],d:['تحمي مصالح المشاهير الاقتصادية','Protect celebrities\' economic interests'],q:['إعلان بيستخدم اسم لاعب مشهور بدون إذنه…','An ad uses a star player\'s name without permission…'],o:AV,a:1},
+{ic:'🟢',n:['Opt-in','Opt-in'],d:['موافقة صريحة قبل جمع البيانات','Clear consent before collecting'],q:['تطبيق بيسألك «تسمح بالموقع؟» قبل ما يجمعه','An app asks "Allow location?" before collecting it'],o:[['Opt-in','Opt-in'],['Opt-out','Opt-out']],a:0},
+{ic:'🚪',n:['Opt-out','Opt-out'],d:['بيستخدم بياناتك إلا لو اعترضت','Uses your data unless you object'],q:['نشرة بريدية بتوصلك لحد ما تلغي الاشتراك','A newsletter keeps coming until you unsubscribe'],o:[['Opt-in','Opt-in'],['Opt-out','Opt-out']],a:1}]},
+{ic:'©️',n:['الدرس 2-2: حقوق الملكية الفكرية','2-2: Intellectual Property'],
+pts:[['الملكية الفكرية = حقوق المبدع على اللي أنتجه بنشاطه الفكري','IP = the creator\'s rights over what they made with intellectual effort'],['نوعان: ملكية صناعية + حقوق المؤلف','Two types: industrial property + copyright'],['الصناعية: براءات الاختراع والعلامات التجارية — بتحتاج تسجيل','Industrial: patents & trademarks — needs registration'],['العلامة التجارية بتنتهي بعد 10 سنين وتتجدد','A trademark lasts 10 years and can be renewed'],['حقوق المؤلف: كتب، أفلام، صور، موسيقى، برامج — بدون تسجيل','Copyright: books, films, photos, music, software — no registration'],['المدة: عمر المؤلف + 50 سنة بعد وفاته','Duration: author\'s life + 50 years after death']],
+tip:['الصناعية = تسجيل • المؤلف = تلقائي من لحظة الإنشاء','Industrial = register • Copyright = automatic from creation'],
+terms:[
+{ic:'⚙️',n:['حقوق الملكية الصناعية','Industrial property'],d:['براءات اختراع وعلامات تجارية','Patents & trademarks'],q:['براءة اختراع لجهاز جديد = ؟','A patent for a new device = ?'],o:[['صناعية','Industrial'],['حقوق مؤلف','Copyright']],a:0},
+{ic:'✍️',n:['حقوق المؤلف','Copyright'],d:['تحمي الأعمال الإبداعية','Protects creative works'],q:['أغنية لسه كاتبها = ؟','A song you just wrote = ?'],o:[['صناعية','Industrial'],['حقوق مؤلف','Copyright']],a:1},
+{ic:'📝',n:['مبدأ التسجيل','Registration principle'],d:['الحق بيبدأ بعد التسجيل','Right starts after registering'],q:['العلامة التجارية لازم تتسجل؟','Must a trademark be registered?'],o:YN,a:0},
+{ic:'🤖',n:['مبدأ عدم التسجيل','Non-formality'],d:['الحق بيبدأ لحظة الإنشاء','Right starts at creation'],q:['قصيدتك لازم تتسجل عشان تتحمي؟','Must your poem be registered to be protected?'],o:YN,a:1},
+{ic:'⏳',n:['مدة الحماية','Protection period'],d:['عمر المؤلف + 50 سنة','Life + 50 years'],q:['مؤلف مات من 30 سنة — لسه محمي؟','Author died 30 years ago — still protected?'],o:YN,a:0},
+{ic:'🧠',n:['الحقوق المعنوية','Moral rights'],d:['نسب العمل للمؤلف ومنع التعديل','Credit + stop alterations'],q:['حق نسب الكتاب لصاحبه = ؟','Right to be named as author = ?'],o:[['معنوي','Moral'],['اقتصادي','Economic'],['مجاور','Neighboring']],a:0},
+{ic:'💰',n:['حقوق النشر والطبع','Economic rights'],d:['النسخ، التوزيع، الترجمة، الأداء','Copying, distribution, translation, performing'],q:['حق ترجمة الكتاب = ؟','Right to translate a book = ?'],o:[['معنوي','Moral'],['اقتصادي','Economic'],['مجاور','Neighboring']],a:1},
+{ic:'🎧',n:['الحقوق المجاورة','Neighboring rights'],d:['للمؤدين ومنتجي التسجيلات والإذاعة','For performers, recording producers & broadcasters'],q:['مين له حقوق مجاورة؟','Who has neighboring rights?'],o:[['مطرب وشركة إنتاج','Singer & record label'],['مخترع','Inventor']],a:0},
+{ic:'🚫',n:['انتهاك الحقوق','Infringement'],d:['استخدام عمل محمي بدون إذن','Using protected work without permission'],q:['رفع رواية على موقعك بدون إذن','Uploading a novel to your site without permission'],o:[['انتهاك','Infringement'],['مسموح','Allowed']],a:0}]},
+{ic:'💬',n:['الدرس 2-3: استخدام المعلومات والاقتباس','2-3: Using Info & Quotation'],
+pts:[['استثناءات: استخدام عمل محمي بدون إذن في حالات محددة','Exceptions: using protected work without permission in set cases'],['مثال: نسخ للتدريس • استخدام شخصي • أداء غير ربحي بدون رسوم','E.g. copies for teaching • personal use • free non-profit performance'],['الاقتباس = جزء صغير من عمل المؤلف بدون إذن بشروط','Quotation = a small part of a work without permission, with rules'],['القواعد: ضرورة • جزء ثانوي • بين « » • بدون تعديل • اذكر المصدر','Rules: needed • minor part • inside « » • unchanged • cite source'],['تراخيص المشاع الإبداعي: المبدع يعلن شروط استخدام عمله','Creative Commons: the creator announces how the work can be used']],
+tip:['اقتباس مقطع صغير مع اسم صاحبه = مسموح. رفع الأغنية كلها = سرقة.','A short clip with credit = OK. Uploading the whole song = theft.'],
+terms:[
+{ic:'📚',n:['الاستثناءات','Exceptions'],d:['استخدام بدون إذن لأغراض محددة','Use without permission for set purposes'],q:['تصوير درس للتدريس في المدرسة','Photocopying a lesson for school teaching'],o:[['مسموح بدون إذن','Allowed, no permission'],['لازم إذن','Needs permission']],a:0},
+{ic:'❝',n:['الاقتباس','Quotation'],d:['جزء صغير + علامات « » + المصدر','Small part + « » + source'],q:['أي اقتباس سليم؟','Which is a valid quotation?'],o:[['سطر قصير + اسم المؤلف','One short line + author name'],['الأغنية كلها','The whole song']],a:0},
+{ic:'🏷️',n:['BY — الإسناد','BY — Attribution'],d:['اذكر اسم المؤلف وعنوان العمل','Show author name & title'],q:['«لازم تذكر المؤلف» = ؟','"You must credit the author" = ?'],o:CC,a:0},
+{ic:'💼',n:['NC — غير تجاري','NC — Non-Commercial'],d:['ممنوع الاستخدام التجاري','No commercial use'],q:['«ممنوع تستخدمه في إعلان بيع» = ؟','"Not for sales ads" = ?'],o:CC,a:1},
+{ic:'🧱',n:['ND — لا مشتقات','ND — No Derivatives'],d:['ممنوع التعديل أو الاشتقاق','No changes or remixes'],q:['«ممنوع تعدّل العمل» = ؟','"You may not modify the work" = ?'],o:CC,a:2},
+{ic:'🔁',n:['SA — نفس الشروط','SA — Share-Alike'],d:['انشر شغلك الجديد بنفس الترخيص','Share your new work under the same license'],q:['«شغلك الجديد بنفس الترخيص» = ؟','"New work under the same license" = ?'],o:CC,a:3}]}];
+const QZ=[
+{q:['صورة بصمة الإصبع تعتبر…','A fingerprint is…'],o:[['بيانات أساسية','Basic data'],['بيانات حساسة','Sensitive data']],a:1},
+{q:['تطبيق بيطلب موافقتك قبل جمع موقعك:','An app asks consent before collecting your location:'],o:[['Opt-in','Opt-in'],['Opt-out','Opt-out']],a:0},
+{q:['نشر صورة شخص بدون إذنه ينتهك…','Posting someone\'s photo without consent violates…'],o:[['حقوق الصورة','Image rights'],['براءة الاختراع','A patent']],a:0},
+{q:['مدة حماية حقوق المؤلف:','Copyright lasts:'],o:[['10 سنين','10 years'],['عمر المؤلف + 50 سنة','Author\'s life + 50 years']],a:1},
+{q:['أول ما تكتب أغنية، حقك…','The moment you write a song, your right…'],o:[['بيبدأ تلقائياً','Starts automatically'],['بعد التسجيل','Starts after registering']],a:0},
+{q:['«ممنوع التعديل على العمل» ترخيص:','"No modifications allowed" is license:'],o:[['ND','ND'],['SA','SA']],a:0}];
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+let stk=0,tries={},cs=0,ca,cn=0;
+const LV=[['مبتدئ','Beginner'],['فاهم','Learner'],['محترف','Pro'],['خبير','Expert']];
+function hud(){const l=Math.min(3,xp/60|0);$('#xp').innerHTML='⭐ '+xp+' <span class="lv">'+t(LV[l])+'</span>'+(stk>1?' <span class="stk">🔥'+stk+'</span>':'')}
+function save(){try{localStorage.setItem('u2p',JSON.stringify({xp,done,miss}))}catch(e){}}
+function reward(ok){let b=0;if(ok){stk++;b=Math.min(stk-1,5)*2;xp+=10+b}else stk=0;hud();save();return b}
+const QX=[['البصمة بيانات حيوية = حساسة، وليها حماية أكبر من الاسم والعنوان.','Biometrics are sensitive data with extra protection.'],['Opt-in يعني تسمح الأول، وبعدين يجمعوا بياناتك.','Opt-in = you agree first, then data is collected.'],['الصورة حق لصاحبها — لازم إذنه قبل النشر.','A photo belongs to its owner — ask before posting.'],['حقوق المؤلف: عمره + 50 سنة. الـ10 سنين دي للعلامة التجارية.','Copyright: life + 50 years. The 10 years is for trademarks.'],['حقوق المؤلف تلقائية من لحظة الإنشاء بدون تسجيل.','Copyright is automatic at creation, no registration.'],['ND = ممنوع التعديل. أما SA فمعناها نفس الترخيص.','ND = no changes. SA means same license.']];
+const CS=[
+{ic:'📸',q:['سارة نشرت صورة صاحبتها في جروب المدرسة من غير ما تسألها.','Sara posted her friend\'s photo in the class group without asking.'],o:AV,a:1,x:['حتى لو الصورة عادية، لازم إذن صاحبها قبل النشر — ده حق الصورة.','Even an ordinary photo needs its owner\'s consent — that is image rights.']},
+{ic:'📩',q:['موقع بيبعتلك عروض كل يوم، ولو مش عايز لازم تدوس «إلغاء الاشتراك».','A site emails you offers daily; to stop, you must click "Unsubscribe".'],o:[['Opt-in','Opt-in'],['Opt-out','Opt-out']],a:1,x:['Opt-out: بيستخدم بياناتك لحد ما تعترض. الـ Opt-in بيسألك قبل.','Opt-out: they use your data until you object. Opt-in asks first.']},
+{ic:'🧬',q:['تطبيق عايز يجمع بصمتك وحالتك الصحية. نوع البيانات دي؟','An app wants your fingerprint and health record. What kind of data?'],o:[['أساسية','Basic'],['حساسة','Sensitive']],a:1,x:['الصحة والبصمة = بيانات حساسة، وليها حماية قانونية أكبر.','Health & biometrics are sensitive data with stronger legal protection.']},
+{ic:'📖',q:['طالب نقل فقرة طويلة من كتاب في بحثه من غير « » ولا مصدر.','A student copied a long passage into his report with no « » and no source.'],o:[['اقتباس سليم','Valid quotation'],['انتهاك','Violation']],a:1,x:['الاقتباس السليم = جزء صغير + « » + ذكر المصدر + بدون تعديل.','Valid quotation = small part + « » + source + unchanged.']},
+{ic:'🏫',q:['مدرس صوّر صفحتين من كتاب علشان يشرح بيهم الدرس في الفصل.','A teacher photocopied two pages to teach the lesson in class.'],o:AV,a:0,x:['ده من الاستثناءات: النسخ لأغراض التدريس مسموح بدون إذن.','An exception: copying for teaching is allowed without permission.']},
+{ic:'💼',q:['صورة عليها ترخيص CC BY-NC، ومصمم حطها في إعلان بيع لمحله.','A photo is licensed CC BY-NC and a designer used it in his shop\'s sales ad.'],o:AV,a:1,x:['NC = غير تجاري، وإعلان البيع استخدام تجاري.','NC = non-commercial; a sales ad is commercial use.']},
+{ic:'✍️',q:['كتبت قصة امبارح ومسجلتهاش في أي جهة. هل هي محمية؟','You wrote a story yesterday and registered it nowhere. Is it protected?'],o:YN,a:0,x:['حقوق المؤلف بتبدأ تلقائياً من لحظة الإنشاء.','Copyright starts automatically at creation.']},
+{ic:'⏳',q:['مؤلف مات من 26 سنة. هل أعماله لسه محمية؟','An author died 26 years ago. Are his works still protected?'],o:YN,a:0,x:['الحماية = عمر المؤلف + 50 سنة، فلسه فاضل 24 سنة.','Protection = life + 50 years, so 24 years remain.']}];
+function setLang(){lang=lang==='ar'?'en':'ar';try{localStorage.setItem('u2l',lang)}catch(e){}render()}
+function unlock(){if($('#gi').value==='546362'){$('#gate').style.display='none';$('#app').style.display='block';try{sessionStorage.setItem('u2k','1')}catch(e){}render()}else{$('#ge').textContent=s('bad');$('.gc').classList.add('shake')}}
+$('#gi').addEventListener('keydown',e=>e.key==='Enter'&&unlock());
+try{if(sessionStorage.getItem('u2k')){$('#gate').style.display='none';$('#app').style.display='block';render()}}catch(e){}
+function go(i){tab=i;render();scrollTo({top:0,behavior:'smooth'})}
+function render(){
+const d=document.documentElement;d.lang=lang;d.dir=lang==='ar'?'rtl':'ltr';
+$('#gp').textContent=s('pass');$('#gbn').textContent=s('go');
+$('#brand').textContent='م/ أحمد تامر · '+s('brand');$('#lg').textContent=s('lang');
+$('#hp').textContent=s('hp');$('#ht').innerHTML=s('ht');$('#hs').textContent=s('hs');$('#ft').textContent=s('ft');
+hud();
+const tot=LS.reduce((a,l)=>a+l.terms.length,0);$('#bar').style.width=Math.min(100,Object.keys(done).length/tot*100)+'%';
+$('#tabs').innerHTML=LS.map((l,i)=>`<button class="tab ${tab===i?'on':''}" onclick="go(${i})">${l.ic} ${t(l.n).split(':')[0]}</button>`).join('')+`<button class="tab ${tab===3?'on':''}" onclick="go(3)">${s('chal')}</button><button class="tab ${tab===4?'on':''}" onclick="go(4)">${s('quiz')}</button>`;
+$('#main').innerHTML=tab<3?lesson(tab):tab===3?chal():quiz();}
+function lesson(i){const l=LS[i];return `<h2 class="lt">${l.ic} ${t(l.n)}</h2><h3>${s('key')}</h3><div class="card">${l.pts.map((p,k)=>`<div class="pt"><i>${k+1}</i><span>${t(p)}</span></div>`).join('')}</div>
+<h3>${s('terms')}</h3><div class="grid">${l.terms.map((m,j)=>`<div class="tm ${done[i+'_'+j]?'done':miss[i+'_'+j]?'miss':''}"><div class="h"><span class="ic">${m.ic}</span><b>${t(m.n)}</b></div><p>${t(m.d)}</p><button class="btn sm" onclick="play(${i},${j})">${done[i+'_'+j]?'✅':s('play')}</button><div class="gm" id="g${i}_${j}"></div></div>`).join('')}</div>
+<div class="tip">💡 ${t(l.tip)}</div><div class="nx"><button class="btn" onclick="go(${i+1})">${i<2?s('next'):s('chal')}</button></div>`}
+function play(i,j){const m=LS[i].terms[j],e=$('#g'+i+'_'+j);if(e.classList.toggle('open')){tries[i+'_'+j]=0;e.innerHTML=`<div class="q">${t(m.q)}</div><div class="os">${shuf(m.o.map((_,k)=>k)).map(k=>`<button class="o" onclick="ans(${i},${j},${k},this)">${t(m.o[k])}</button>`).join('')}</div><div class="fb"></div><div class="exw"></div>`}}
+function ans(i,j,k,b){const m=LS[i].terms[j],g=b.closest('.gm'),f=g.querySelector('.fb'),x=g.querySelector('.exw'),id=i+'_'+j,bs=[...g.querySelectorAll('.o')],tx=t(m.o[m.a]);
+if(k===m.a){b.classList.add('ok');bs.forEach(o=>o.disabled=true);f.style.color='var(--ok)';
+if(!tries[id]){const bo=done[id]?0:reward(true);f.textContent='✅ '+t(['برافو!','Great!'])+(bo?' 🔥+'+bo:'')+(done[id]?'':' +10')}else{f.textContent='✅ '+t(['صح — دلوقتي فاهمها','Correct — now you get it']);xp+=5;stk=0;hud();save()}
+done[id]=1;delete miss[id];b.closest('.tm').classList.add('done');x.innerHTML=`<div class="ex">📖 <b>${t(m.n)}</b>: ${t(m.d)}</div>`;save()}
+else{tries[id]=(tries[id]||0)+1;b.classList.add('bad');b.disabled=true;stk=0;hud();f.style.color='var(--bad)';
+if(tries[id]<2){f.textContent='❌ '+t(['مش دي — اقرا التلميح وجرّب تاني','Not that one — read the hint, try again']);x.innerHTML=`<div class="ex no">💡 ${t(m.d)}</div>`}
+else{f.textContent='❌ '+t(['الصح متعلّم بالأخضر — ركّز في الشرح','The correct one is in green — read why']);bs.forEach(o=>{o.disabled=true;if(o.textContent===tx)o.classList.add('ok')});miss[id]=1;save();b.closest('.tm').classList.add('miss');x.innerHTML=`<div class="ex no">📖 <b>${t(m.n)}</b>: ${t(m.d)}</div>`}}}
+function chal(){const n=CS.length,H=`<h2 class="lt">${s('chal')}</h2>`;
+if(cs>=n)return H+`<div class="res">🎉 ${s('score')}: ${cn} ${s('of')} ${n}<br><small>${t([cn>=n-1?'أنت فاهم الوحدة 👏':cn>=n/2?'كويس — راجع الحالات اللي غلطت فيها':'ارجع للدروس واقرا التلميحات وجرّب تاني','You really get this unit 👏'])}</small></div><div class="nx"><button class="btn" onclick="cs=0;cn=0;ca=void 0;render()">🔁 ${t(['العب تاني','Play again'])}</button> <button class="btn" onclick="go(4)">${s('quiz')}</button></div>`;
+const c=CS[cs],d=ca!==void 0;
+return H+`<p style="color:var(--dim);margin:0">${t(['حالات من الحياة الواقعية — اختار، وبعدين اقرا ليه.','Real-life cases — choose, then read why.'])}</p><div class="cs"><div class="meta"><span>${cs+1} / ${n}</span><span style="font-size:22px">${c.ic}</span></div><div class="pb"><i style="width:${cs/n*100}%"></i></div><div class="sc">${t(c.q)}</div><div class="os">${c.o.map((o,k)=>`<button class="o ${d?(k===c.a?'ok':ca===k?'bad':''):''}" ${d?'disabled':''} onclick="cpick(${k})">${t(o)}</button>`).join('')}</div>${d?`<div class="ex ${ca===c.a?'':'no'}">${ca===c.a?'✅ ':'❌ '}${t(c.x)}</div><div class="nx"><button class="btn" onclick="cs++;ca=void 0;render()">${cs<n-1?t(['الحالة التالية ←','Next case →']):t(['النتيجة','Result'])}</button></div>`:''}</div>`}
+function cpick(k){ca=k;if(k===CS[cs].a)cn++;reward(k===CS[cs].a);render()}
+function quiz(){const n=Object.keys(qa).length,sc=QZ.filter((q,i)=>qa[i]===q.a).length;
+return `<h2 class="lt">${s('quiz')}</h2>`+QZ.map((q,i)=>{const d=qa[i]!==undefined;return `<div class="mq"><div class="q">${i+1}. ${t(q.q)}</div><div class="os">${q.o.map((o,k)=>`<button class="o ${d?(k===q.a?'ok':qa[i]===k?'bad':''):''}" ${d?'disabled':''} onclick="pick(${i},${k})">${t(o)}</button>`).join('')}</div>${d?`<div class="ex ${qa[i]===q.a?'':'no'}">${qa[i]===q.a?'✅ ':'❌ '}${t(QX[i])}</div>`:''}</div>`}).join('')+(n===QZ.length?`<div class="res">🎉 ${s('score')}: ${sc} ${s('of')} ${QZ.length}</div><div class="nx"><button class="btn" onclick="qa={};render()">🔁 ${t(['إعادة الاختبار','Retry'])}</button></div>`:'<div class="nx"></div>')}
+function pick(i,k){if(qa[i]!==undefined)return;qa[i]=k;reward(k===QZ[i].a);render()}
+</script>
+</body>
+</html>
